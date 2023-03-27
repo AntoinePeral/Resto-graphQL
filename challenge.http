@@ -1,0 +1,14 @@
+### Récupérer le nom de la ville d'id 75 et le nom des restaurants qui s'y trouvent
+
+
+### Affiche la liste des restaurants avec leur nom et leur id
+
+
+### Nom, Manager (nom,prénom) du restaurant d'id 1
+
+
+### Récupération de tous les managers (nom,prénom,restaurant)
+
+
+### BONUS
+### Ajouter un restaurant en BDD (mutation)
