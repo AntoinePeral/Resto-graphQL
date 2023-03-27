@@ -1,0 +1,6 @@
+# le type Query est obligatoire, on vient décrire les méthodes publiques pour requêter notre API
+type Query {
+    getAllRestaurants: [Restaurant]
+    getRestaurantById: Restaurant
+    getAllCities: [City]
+}

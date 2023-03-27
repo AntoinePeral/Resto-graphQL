@@ -1,0 +1,8 @@
+# Je viens définir mon type Restaurant qui à l'image de ma table en BDD
+type Restaurant {
+    id: Int
+    name: String
+    description: String
+    terrace: Boolean
+    city: City
+}

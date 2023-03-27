@@ -27,7 +27,7 @@ module.exports = {
     // L'opérateur de "rest" permet de transformer
     // ici X variables en param. en un tableau
     async query(...params) {
-        // debug(...params);
+        debug(...params);
         queryCount += 1;
         debug(`Req n°${queryCount}`);
 

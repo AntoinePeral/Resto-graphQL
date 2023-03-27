@@ -1,0 +1,23 @@
+POST http://localhost:3000/graphql
+
+query Query {
+  getAllRestaurants {
+    id
+    name
+    city{
+        name
+    }
+  }
+}
+
+###
+
+POST http://localhost:3000/graphql
+
+query Query {
+  getAllCities {
+    name
+    postal_code
+  }
+}
+

@@ -1,0 +1,5 @@
+type City{
+    id:Int
+    name:String
+    restaurants: [Restaurant]
+}
