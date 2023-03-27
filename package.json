@@ -1,0 +1,35 @@
+{
+    "name": "resto-graphql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node .",
+        "resetDB": "sqitch revert -y; sqitch deploy; DEBUG=* node ./data/seeding.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/O-clock-Spe-Data/resto-graphql.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/O-clock-Spe-Data/resto-graphql/issues"
+    },
+    "homepage": "https://github.com/O-clock-Spe-Data/resto-graphql#readme",
+    "dependencies": {
+        "@faker-js/faker": "^6.2.0",
+        "debug": "^4.3.3",
+        "dotenv": "^11.0.0",
+        "pg": "^8.7.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.5.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.0.0"
+    }
+}
