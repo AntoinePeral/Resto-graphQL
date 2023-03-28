@@ -5,4 +5,5 @@ type Query {
     getAllCities: [City]
     getCityById(id: Int!): City
     getAllManagers: [Manager]
+    getCitation: Citation
 }

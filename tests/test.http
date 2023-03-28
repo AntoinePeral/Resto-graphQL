@@ -21,3 +21,8 @@ query Query {
   }
 }
 
+###
+
+###
+#"(-1.7359,-105.2038)"
+GET https://tile.openweathermap.org/map/clouds_new/1/1/1.png?appid=7f532fd05032256a7a3d1e555abdc6eb

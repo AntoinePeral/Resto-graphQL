@@ -28,7 +28,7 @@ const PORT = process.env.PORT ?? 3000;
     await apolloServer.start();
 
     // mise en place du serveur Apollo en tant que middleware d'Express
-    app.use("/graphql",cors(),express.json(),expressMiddleware(apolloServer));
+    app.use("/graphql",cors(),express.json(),expressMiddleware(apolloServer,apolloConfig));
 
     // mise en place de l'écoute sur le port 3000
     serverHTTP.listen(PORT,()=>{
@@ -51,3 +51,12 @@ const PORT = process.env.PORT ?? 3000;
 
 //     console.log(`🚀  Server ready at: ${url}`);
 // })();
+
+
+const CronJob = require('cron').CronJob;
+const meteoAPI = require("./app/datasources/meteoAPI");
+const job = new CronJob(
+    '0 52 * * * *', // tous les jours à minuit
+    meteoAPI.updateMeteo
+);
+job.start();

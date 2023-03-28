@@ -1,8 +1,16 @@
 type Manager{
     id:Int
-    email: String
+    email: EmailAddress
     password:String
     firstname:String
     lastname:String
     restaurants: [Restaurant]
+}
+
+
+input ManagerInput{
+    email: EmailAddress!
+    password:String!
+    firstname:String!
+    lastname:String!
 }

@@ -1,0 +1,4 @@
+type Citation{
+    text:String
+    personnage:String
+}

@@ -1,24 +1,24 @@
-const restaurantDatamapper = require("../datamappers/restaurant");
-const cityDatamapper = require("../datamappers/city");
-const managerDatamapper = require("../datamappers/manager");
 
 // Resolvers define how to fetch the types defined in your schema.
 // This resolver retrieves books from the "books" array above.
 const resolverQuery = {
-    getAllRestaurants (){
-        return restaurantDatamapper.findAll();
+    getAllRestaurants (_,__,{dataSources}){
+        return dataSources.restaurantDatamapper.findAll();
     },
-    getRestaurantById (_ , args){
-        return restaurantDatamapper.findByPk(args.id);
+    getRestaurantById (_ , args,{dataSources}){
+        return dataSources.restaurantDatamapper.findByPk(args.id);
     },
-    getAllCities(){
-        return cityDatamapper.findAll();
+    getAllCities(_,__,{dataSources}){
+        return dataSources.cityDatamapper.findAll();
     },
-    getCityById(_,args){
-        return cityDatamapper.findByPk(args.id);
+    getCityById(_,args,{dataSources}){
+        return dataSources.cityDatamapper.findByPk(args.id);
     },
-    getAllManagers(){
-        return managerDatamapper.findAll();
+    getAllManagers(_,__,{dataSources}){
+        return dataSources.managerDatamapper.findAll();
+    },
+    getCitation(_,__,{dataSources}){
+        return dataSources.kaamelottAPI.getCitation();
     }
 };
 

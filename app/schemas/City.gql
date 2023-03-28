@@ -2,4 +2,5 @@ type City{
     id:ID
     name:String
     restaurants: [Restaurant]
+    meteo: Meteo
 }
