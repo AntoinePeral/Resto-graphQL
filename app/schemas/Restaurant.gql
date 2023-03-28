@@ -1,8 +1,17 @@
 # Je viens définir mon type Restaurant qui à l'image de ma table en BDD
 type Restaurant {
-    id: Int
+    id: ID
     name: String
     description: String
     terrace: Boolean
     city: City
+    manager: Manager
+}
+
+input RestaurantInput{
+    name: String!
+    description: String!
+    terrace: Boolean!
+    city_id: ID!
+    manager_id: Int!
 }

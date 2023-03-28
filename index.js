@@ -10,7 +10,7 @@ const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 const { expressMiddleware } = require('@apollo/server/express4');
 
-
+const cors = require('cors')
 require("dotenv").config();
 
 // je récupère la configuration Express et la configuration Apollo
@@ -28,7 +28,7 @@ const PORT = process.env.PORT ?? 3000;
     await apolloServer.start();
 
     // mise en place du serveur Apollo en tant que middleware d'Express
-    app.use("/graphql",/*cors(),*/express.json(),expressMiddleware(apolloServer));
+    app.use("/graphql",cors(),express.json(),expressMiddleware(apolloServer));
 
     // mise en place de l'écoute sur le port 3000
     serverHTTP.listen(PORT,()=>{

@@ -1,14 +1,83 @@
 ### Récupérer le nom de la ville d'id 75 et le nom des restaurants qui s'y trouvent
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
 
+query GetRestaurantById($getCityByIdId: Int!) {
+  getCityById(id: $getCityByIdId) {
+    name
+    restaurants {
+      name
+    }
+  }
+}
+
+{
+  "getCityByIdId": 75
+}
 
 ### Affiche la liste des restaurants avec leur nom et leur id
 
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query GetRestaurantById {
+  getAllRestaurants {
+    name
+    id
+  }
+}
 
 ### Nom, Manager (nom,prénom) du restaurant d'id 1
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
 
+query GetRestaurantById($getRestaurantByIdId: Int!) {
+  getRestaurantById(id: $getRestaurantByIdId) {
+    name
+    manager{
+      firstname
+      lastname
+    }
+  }
+}
+
+{
+  "getRestaurantByIdId": 1
+}
 
 ### Récupération de tous les managers (nom,prénom,restaurant)
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
 
+query GetAllManagers {
+  getAllManagers {
+    firstname
+    lastname
+  }
+}
 
 ### BONUS ###
 ### Ajouter un restaurant en BDD (mutation)
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation Mutation($input: RestaurantInput!) {
+  addRestaurant(input: $input) {
+    name
+  }
+}
+
+{
+  "input": {
+    "city_id": 1,
+    "description": "test",
+    "manager_id": 1,
+    "name": "test2",
+    "terrace": true
+  }
+}
