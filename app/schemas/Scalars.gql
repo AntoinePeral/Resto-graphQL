@@ -1,1 +1,7 @@
 scalar EmailAddress
+
+scalar PositiveInt
+
+scalar DateTime
+
+scalar PostalCodeFr

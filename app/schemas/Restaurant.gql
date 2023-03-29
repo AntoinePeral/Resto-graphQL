@@ -6,6 +6,7 @@ type Restaurant {
     terrace: Boolean
     city: City
     manager: Manager
+     cookingStyles: [CookingStyle!]!
 }
 
 input RestaurantInput{

@@ -5,4 +5,4 @@ class City extends CoreDatamapper {
     tableName = 'city';
 }
 
-module.exports = new City(client);
+module.exports = City;

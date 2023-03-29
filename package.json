@@ -24,6 +24,8 @@
         "@apollo/server": "^4.5.0",
         "@faker-js/faker": "^6.2.0",
         "cron": "^2.3.0",
+        "dataloader": "^2.2.2",
+        "datasource-sql": "^2.0.1",
         "debug": "^4.3.3",
         "dotenv": "^11.0.0",
         "express": "^4.18.2",

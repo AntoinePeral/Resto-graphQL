@@ -1,4 +1,6 @@
-POST http://localhost:3000/graphql
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
 
 query Query {
   getAllRestaurants {
@@ -12,7 +14,9 @@ query Query {
 
 ###
 
-POST http://localhost:3000/graphql
+POST http://localhost:3001/graphql
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
 
 query Query {
   getAllCities {

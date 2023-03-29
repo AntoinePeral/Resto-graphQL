@@ -3,19 +3,19 @@
 // This resolver retrieves books from the "books" array above.
 const resolverQuery = {
     getAllRestaurants (_,__,{dataSources}){
-        return dataSources.restaurantDatamapper.findAll();
+        return dataSources.restoDB.restaurant.findAll();
     },
     getRestaurantById (_ , args,{dataSources}){
-        return dataSources.restaurantDatamapper.findByPk(args.id);
+        return dataSources.restoDB.restaurant.findByPk(args.id);
     },
     getAllCities(_,__,{dataSources}){
-        return dataSources.cityDatamapper.findAll();
+        return dataSources.restoDB.city.findAll();
     },
     getCityById(_,args,{dataSources}){
-        return dataSources.cityDatamapper.findByPk(args.id);
+        return dataSources.restoDB.city.findByPk(args.id);
     },
     getAllManagers(_,__,{dataSources}){
-        return dataSources.managerDatamapper.findAll();
+        return dataSources.restoDB.manager.findAll();
     },
     getCitation(_,__,{dataSources}){
         return dataSources.kaamelottAPI.getCitation();

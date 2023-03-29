@@ -5,4 +5,4 @@ class Manager extends CoreDatamapper {
     tableName = 'manager';
 }
 
-module.exports = new Manager(client);
+module.exports = Manager;

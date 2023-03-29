@@ -2,6 +2,7 @@ const { readFileSync }= require("fs");
 const path = require("path");
 const scalarsSchema = readFileSync(path.join(__dirname,"./Scalars.gql"));
 const citySchema = readFileSync(path.join(__dirname,"./City.gql"));
+const cookingStyleSchema = readFileSync(path.join(__dirname,"./CookingStyle.gql"));
 const restaurantSchema = readFileSync(path.join(__dirname,"./Restaurant.gql"));
 const citationSchema = readFileSync(path.join(__dirname,"./Citation.gql"));
 const managerSchema = readFileSync(path.join(__dirname,"./Manager.gql"));
@@ -12,6 +13,7 @@ const mutationSchema = readFileSync(path.join(__dirname,"./Mutation.gql"));
 const typeDefs = `#graphql
     ${scalarsSchema}
     ${citySchema}
+    ${cookingStyleSchema}
     ${restaurantSchema}
     ${citationSchema}
     ${managerSchema}

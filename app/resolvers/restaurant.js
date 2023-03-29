@@ -1,9 +1,9 @@
 const resolvers = {
     city(parent,_,{dataSources}){
-        return dataSources.cityDatamapper.findByPk(parent.city_id);
+        return dataSources.restoDB.city.findByPk(parent.city_id);
     },
     manager(parent,_,{dataSources}){
-        return dataSources.managerDatamapper.findByPk(parent.manager_id);
+        return dataSources.restoDB.manager.findByPk(parent.manager_id);
     }
 };
 

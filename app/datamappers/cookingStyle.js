@@ -1,23 +1,46 @@
+const DataLoader = require('dataloader');
 const CoreDatamapper = require('./coreDatamapper');
-const client = require('../db/pg');
 
 class CookingStyle extends CoreDatamapper {
     tableName = 'cooking_style';
 
+    createLoaders() {
+        // On créer les loaders de base
+        super.createLoaders();
+
+        // Puis ceux spécifiques au datamapper courant
+        // ! attention de ne pas utiliser les même que dans le coreDatamapper
+        this.restaurantIdLoader = new DataLoader(async (ids) => {
+            const intIds = ids.map((id) => parseInt(id, 10));
+            const records = await this.findByRestaurant(intIds);
+            /*
+            Attention ici on ne doit pas utilisé un find, mais un filter,
+            car il peut y avoir plusieurs catégories
+            */
+            return intIds.map((id) => records.filter((record) => record.restaurant_id === id));
+        });
+    }
+
     async findByRestaurant(restaurantId) {
-        const preparedQuery = {
-            text: `
-                SELECT *
-                FROM "${this.tableName}"
-                JOIN "restaurant_has_cooking_style" ON "restaurant_has_cooking_style"."cooking_style_id" = "cooking_style"."id"
-                WHERE "restaurant_id" = $1`,
-            values: [restaurantId],
-        };
+        const bulk = Array.isArray(restaurantId);
 
-        const result = await this.client.query(preparedQuery);
+        if (!bulk && process.env.DATALOADER_ENABLED) {
+            return this.restaurantIdLoader.load(restaurantId);
+        }
 
-        return result.rows;
+        const query = this.knex(this.tableName)
+            .select('*')
+            .join('restaurant_has_cooking_style', 'restaurant_has_cooking_style.cooking_style_id', '=', 'cooking_style.id');
+
+        if (bulk) {
+            query.whereIn('restaurant_id', restaurantId);
+        } else {
+            query.where('restaurant_id', restaurantId);
+        }
+
+        const result = await (process.env.CACHE_ENABLED ? query.cache(this.TTL) : query);
+        return result;
     }
 }
 
-module.exports = new CookingStyle(client);
+module.exports = CookingStyle;
