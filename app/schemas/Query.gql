@@ -1,9 +1,17 @@
 # le type Query est obligatoire, on vient décrire les méthodes publiques pour requêter notre API
 type Query {
-    getAllRestaurants: [Restaurant]
-    getRestaurantById(id: Int!): Restaurant
-    getAllCities: [City]
-    getCityById(id: Int!): City
-    getAllManagers: [Manager]
+    getAllCities: [City!]!
+    getCity(id: Int!): City
+
+    getAllRestaurants: [Restaurant!]!
+    getRestaurant(id: Int!): Restaurant
+
+    getAllManagers: [Manager!]!
+    getManager(id: Int!): Manager
+
+    getAllCookingStyles: [CookingStyle!]!
+    getCookingStyle(id: Int!): CookingStyle
+
     getCitation: Citation
+
 }

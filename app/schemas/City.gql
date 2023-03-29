@@ -3,5 +3,5 @@ type City{
     name:String
     restaurants: [Restaurant]
     postal_code: PostalCodeFr!
-    meteo: Meteo
+    #weather: Weather
 }

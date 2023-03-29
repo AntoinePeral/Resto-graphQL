@@ -1,3 +1,14 @@
-type Meteo{
-    temperature: Float
+type WeatherDaily{
+    "jour"
+    date: String!
+    "température en °C"
+    temperature: Float!
+    "État du ciel (nuageux, éclaircies…)"
+    sky: String!
+    icon: String!
+}
+
+
+type Weather{
+   daily: [WeatherDaily]
 }

@@ -4,7 +4,8 @@ const debug = require('debug')('knex:stats');
 const express = require("express");
 const app = express();
 
-app.use(express.static(path.join(__dirname,"../public")));
+// app.use(express.static(path.join(__dirname,"../public")));
+app.use(express.static(path.resolve(__dirname, '../front/build')));
 
 // Configuration d'Apollo
 const typeDefs = require("./schemas");

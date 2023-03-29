@@ -1,12 +1,15 @@
 # Je viens définir mon type Restaurant qui à l'image de ma table en BDD
 type Restaurant {
-    id: ID
-    name: String
-    description: String
-    terrace: Boolean
-    city: City
-    manager: Manager
-     cookingStyles: [CookingStyle!]!
+    id: Int!
+    name: String!
+    description: String!
+    telephone: String!
+    terrace: Boolean!
+    created_at: String!
+    updated_at: String
+    manager: Manager!
+    city: City!
+    cookingStyles: [CookingStyle!]!
 }
 
 input RestaurantInput{

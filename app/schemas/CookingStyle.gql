@@ -1,7 +1,7 @@
 type CookingStyle {
-    id: PositiveInt!
+    id: Int!
     label: String!
-    created_at: DateTime!
-    updated_at: DateTime
+    created_at: String!
+    updated_at: String
     restaurants: [Restaurant!]!
 }

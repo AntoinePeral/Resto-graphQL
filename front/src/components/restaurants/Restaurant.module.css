@@ -1,0 +1,28 @@
+.resto {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.resto h1 {
+    font-size: 2rem;
+}
+
+.resto h2 {
+    font-size: 1.5rem;
+}
+
+.resto h3 {
+    font-size: 1.3rem;
+}
+
+.resto p {
+    font-size: 1.3rem;
+}
+
+.resto img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+}

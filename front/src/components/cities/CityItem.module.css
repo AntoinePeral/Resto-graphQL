@@ -1,0 +1,15 @@
+.city {
+    align-items: center;
+}
+
+.cityInfos {
+    min-width: 60%;
+}
+
+.city h1 {
+    font-size: 1.5rem;
+}
+
+.city h2 {
+    font-size: 1.1rem;
+}

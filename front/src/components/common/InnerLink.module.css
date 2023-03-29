@@ -1,0 +1,10 @@
+.innerLink {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin: 5px 10px;
+}
+
+.innerLink:hover {
+    color: #e10098;
+}

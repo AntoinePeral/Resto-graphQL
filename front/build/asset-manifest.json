@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e0b1eb42.css",
+    "main.js": "/static/js/main.bbb7a180.js",
+    "static/media/resto.jpeg": "/static/media/resto.a80ed64ea21005ce7cea.jpeg",
+    "static/media/noTerrasse.png": "/static/media/noTerrasse.5efe561296a6b0986344.png",
+    "static/media/logo.png": "/static/media/logo.88c7006e96342f4986cb.png",
+    "static/media/terrasse.png": "/static/media/terrasse.666e5898840bded97a3f.png",
+    "index.html": "/index.html",
+    "main.e0b1eb42.css.map": "/static/css/main.e0b1eb42.css.map",
+    "main.bbb7a180.js.map": "/static/js/main.bbb7a180.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0b1eb42.css",
+    "static/js/main.bbb7a180.js"
+  ]
+}

@@ -1,0 +1,15 @@
+.resto {
+    align-items: center;
+}
+
+.restoInfos {
+    min-width: 60%;
+}
+
+.resto h1 {
+    font-size: 1.5rem;
+}
+
+.resto h2 {
+    font-size: 1.1rem;
+}

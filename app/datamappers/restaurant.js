@@ -72,6 +72,23 @@ class Restaurant extends CoreDatamapper {
         const result = await (process.env.CACHE_ENABLED ? query.cache(this.TTL) : query);
         return result;
     }
+
+    async findByCookingStyle(cookingStyleId) {
+        const query = this.knex(this.tableName)
+            .select('restaurant.*')
+            .join(
+                'restaurant_has_cooking_style',
+                'restaurant_has_cooking_style.restaurant_id',
+                'restaurant.id',
+            )
+            .where('cooking_style_id', cookingStyleId);
+
+        const rows = await (process.env.CACHE_ENABLED)
+            ? query.cache(process.env.SQL_CACHE_TTL)
+            : query;
+
+        return rows;
+    }
 }
 
 module.exports = Restaurant;

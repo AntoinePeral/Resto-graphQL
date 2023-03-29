@@ -5,7 +5,7 @@ module.exports = {
         debug(dataSources);
         return dataSources.restoDB.restaurant.findByCity(city.id);
     },
-    meteo(city,_,{ dataSources }){
-        return dataSources.meteoAPI.getMeteoByGeopos(city.geopos.x,city.geopos.y);
-    }
+    // weather(city,_,{ dataSources }){
+    //     return dataSources.meteoAPI.getMeteoByGeopos(city.geopos.x,city.geopos.y);
+    // }
 }

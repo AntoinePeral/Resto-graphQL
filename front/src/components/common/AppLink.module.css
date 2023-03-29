@@ -1,0 +1,8 @@
+.appLink {
+    color: black;
+    text-decoration: none;
+}
+
+.appLink:hover, .appLink.active {
+    border-bottom: 3px solid #e10098;
+}
